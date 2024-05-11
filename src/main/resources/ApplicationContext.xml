@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> 
+        
+        <!-- bean definitions here -->
+        
+        <bean id = "cars" class = "com.example.SpringDemoNoNewKeyWord.Cars">   <!-- bean creation with FQCN-->
+		 <!--	<property name = "engine" ref="engine" /> --> <!-- dependency injection with setter injection using property name should be the variable name in class and ref should be the bean id of it-->
+			<constructor-arg ref = "engine" /> <!-- dependency injection with constructor injection using constructor-arg ref should be bean id -->
+		</bean> 
+        
+        <bean id = "engine" class = "com.example.SpringDemoNoNewKeyWord.Engine">   <!-- bean creation with FQCN-->
+			
+		</bean>    
+
+</beans>
